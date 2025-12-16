@@ -36,6 +36,7 @@ main {
 }
 
 @media (min-width: 768px) {
+  list-style-type: none; /* Hide bullet points */
   main {
     grid-template-columns: 2fr 1fr;
   }
@@ -63,6 +64,10 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  /* stack details above participants */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .activity-card h4 {
@@ -150,18 +155,26 @@ footer {
 }
 
 .participants-list {
-  margin: 0 0 8px 20px; /* keep bulleted appearance */
+  /* show participants as wrapped badges below activity */
+  margin: 8px 0 8px 0;
   padding: 0;
-  max-height: 160px;
-  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  max-height: none;
+  overflow: visible;
 }
 
 .participants-list li {
   list-style-position: inside;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
+  gap: 8px;
+  margin: 4px 8px 4px 0;
+  background: #f6f8fa;
+  padding: 4px 8px;
+  border-radius: 16px;
 }
 
 .avatar {
@@ -187,4 +200,12 @@ footer {
   color: #666;
   font-style: italic;
   margin-left: 0; /* align nicely with bullets */
+  margin: 0;
+}
+
+/* small helper for the delete icon */
+.participant-delete {
+  cursor: pointer;
+  margin-left: 6px;
+  font-size: 14px;
 }
