@@ -36,6 +36,7 @@ main {
 }
 
 @media (min-width: 768px) {
+  list-style-type: none; /* Hide bullet points */
   main {
     grid-template-columns: 2fr 1fr;
   }
@@ -63,6 +64,10 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  /* stack details above participants */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .activity-card h4 {
@@ -141,4 +146,66 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+.participants-heading {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  color: #1a237e;
+}
+
+.participants-list {
+  /* show participants as wrapped badges below activity */
+  margin: 8px 0 8px 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  max-height: none;
+  overflow: visible;
+}
+
+.participants-list li {
+  list-style-position: inside;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 8px 4px 0;
+  background: #f6f8fa;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #1a237e;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex: 0 0 28px;
+}
+
+.participant-name {
+  color: #333;
+  font-size: 14px;
+}
+
+.no-participants {
+  color: #666;
+  font-style: italic;
+  margin-left: 0; /* align nicely with bullets */
+  margin: 0;
+}
+
+/* small helper for the delete icon */
+.participant-delete {
+  cursor: pointer;
+  margin-left: 6px;
+  font-size: 14px;
 }
